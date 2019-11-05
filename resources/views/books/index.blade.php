@@ -84,6 +84,17 @@
                     </div>
                 @endif
 
+                    @if ($errors->any())
+                        <div class="alert alert-danger alert-dismissible">
+                            <button type="button" class="close" data-dismiss="alert">&times;</button>
+                            <ul class="list-group">
+                                @foreach ($errors->all() as $error)
+                                    <li  class="list-group-item list-group-item-danger">{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
 
                     <table class="table table-dark table-striped" id="table">
                         <thead>

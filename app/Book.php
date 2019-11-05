@@ -8,7 +8,7 @@ class Book extends Model
 {
     protected $fillable = ["title", "author", "year", "isbn","quantity"];
 
-    public function transcations()
+    public function transactions()
     {
        return $this->hasMany(Transaction::class);
     }

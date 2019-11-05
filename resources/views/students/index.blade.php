@@ -6,9 +6,9 @@
         <div class="row">
 
             <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
-               CREATE STUDENT
+                CREATE STUDENT
             </button>
-{{--            Modal Start--}}
+            {{--            Modal Start--}}
 
             <div class="modal" id="myModal">
                 <div class="modal-dialog">
@@ -42,23 +42,27 @@
 
                                             <div class="form-group">
                                                 <label for="names">Full Name</label>
-                                                <input type="text"  id="names" class="form-control" name="name" placeholder="Full Name" required>
+                                                <input type="text" id="names" class="form-control" name="name"
+                                                       placeholder="Full Name">
                                             </div>
 
                                             <div class="form-group">
                                                 <label for="dob">Date Of Birth</label>
-                                                <input type="date"  id="dob" class="form-control" name="dob" placeholder="Date of birth" required>
+                                                <input type="date" id="dob" class="form-control" name="dob"
+                                                       placeholder="Date of birth" required>
                                             </div>
 
                                             <label>Gender</label>
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="gender" value="Male">Male
+                                                    <input type="radio" class="form-check-input" name="gender"
+                                                           value="Male">Male
                                                 </label>
                                             </div>
                                             <div class="form-check">
                                                 <label class="form-check-label">
-                                                    <input type="radio" class="form-check-input" name="gender" value="Female">Female
+                                                    <input type="radio" class="form-check-input" name="gender"
+                                                           value="Female">Female
                                                 </label>
                                             </div>
 
@@ -73,7 +77,7 @@
 
                         <!-- Modal footer -->
                         <div class="modal-footer">
-{{--                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
+                            {{--                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>--}}
                         </div>
 
                     </div>
@@ -81,7 +85,7 @@
             </div>
 
 
-{{--            Modal End--}}
+            {{--            Modal End--}}
 
 
         </div>
@@ -92,6 +96,17 @@
                 @if(Session::has('success'))
                     <div class="alert alert-success">
                         <strong>Success!</strong> {{Session::get('success')}}
+                    </div>
+                @endif
+
+                @if ($errors->any())
+                    <div class="alert alert-danger alert-dismissible">
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                        <ul class="list-group">
+                            @foreach ($errors->all() as $error)
+                                <li  class="list-group-item list-group-item-danger">{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
                 @endif
 
@@ -108,7 +123,7 @@
                     </tr>
                     </thead>
                     <tbody>
-{{--                    "school_id","name","gender","dob"--}}
+                    {{--                    "school_id","name","gender","dob"--}}
                     @foreach($students as $student)
                         <tr>
                             <td>{{$loop->iteration}}</td>

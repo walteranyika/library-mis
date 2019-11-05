@@ -19,7 +19,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
-        <ul class="navbar-nav ml-auto" >
+        <ul class="navbar-nav ml-auto mr-4" >
             <!-- Dropdown -->
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
@@ -27,16 +27,26 @@
                 </a>
                 <div class="dropdown-menu">
                     <a class="dropdown-item" href="{{route('students')}}">Student</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{route('books')}}">Books</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{route('schools')}}">Schools</a>
+                    <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{route('activities')}}">Activities</a>
                 </div>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{route('transactions')}}">Catalogue</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Reports</a>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                   Reports
+                </a>
+                <div class="dropdown-menu dropdown-menu-left">
+                    <a class="dropdown-item" href="{{route('book-requests')}}">Text Books Request</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{route('most-requested')}}">Most Requested Books</a>
+                </div>
             </li>
         </ul>
     </div>
