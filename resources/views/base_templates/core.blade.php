@@ -9,6 +9,8 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/css/select2.min.css">
+    @yield('extras')
 
 </head>
 <body>
@@ -35,9 +37,7 @@
                     <a class="dropdown-item" href="{{route('activities')}}">Activities</a>
                 </div>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{{route('transactions')}}">Catalogue</a>
-            </li>
+
             <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
                    Reports
@@ -46,7 +46,15 @@
                     <a class="dropdown-item" href="{{route('book-requests')}}">Text Books Request</a>
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="{{route('most-requested')}}">Most Requested Books</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{route('activities_by_day')}}">Attendance By Day</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="{{route('activities_by_month')}}">Attendance By Month</a>
                 </div>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{{route('transactions')}}">Catalogue</a>
             </li>
         </ul>
     </div>
@@ -57,11 +65,16 @@
 
 <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.10/js/select2.min.js"></script>
 
 
 <script>
     $(document).ready(function() {
         $('#table').DataTable();
+
+        $("#selUser").select2();
+        $("#selActivity").select2();
+        $("#book").select2();
     } );
 </script>
 {{--https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js

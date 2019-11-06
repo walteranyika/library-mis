@@ -67,8 +67,9 @@
 
                                              <div class="form-group">
 
-                                                 <label for="student">Student</label>
-                                                 <select name="student_id" id="student" class="form-control">
+                                                 <label for="selUser">Student</label>
+                                                 <br>
+                                                 <select name="student_id" id='selUser' class="form-control"  style='width: 100%;'>
                                                      @foreach($students as $student)
                                                          <option value="{{$student->id}}">{{$student->name}}</option>
                                                      @endforeach
@@ -76,8 +77,9 @@
                                              </div>
 
                                             <div class="form-group">
-                                                <label for="activity">Activity</label>
-                                                <select name="activity_id" id="activity" class="form-control">
+                                                <label for="selActivity">Activity</label>
+                                                <br>
+                                                <select name="activity_id" id="selActivity" class="form-control" style='width: 100%;'>
                                                     @foreach($activities as $activity)
                                                         <option value="{{$activity->id}}">{{$activity->name}}</option>
                                                     @endforeach
@@ -87,7 +89,7 @@
 
                                             <div class="form-group">
                                                 <label for="book">Book</label>
-                                                <select name="book_id" id="book" class="form-control">
+                                                <select name="book_id" id="book" class="form-control" style='width: 100%;'>
                                                     @foreach($books as $book)
                                                         <option value="{{$book->id}}">{{$book->title}}</option>
                                                     @endforeach
